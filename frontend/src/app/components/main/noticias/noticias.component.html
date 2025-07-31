@@ -1,0 +1,150 @@
+<!--Sección noticias-->
+<section class="container my-5">
+  <div class="row justify-content-center ms-3">
+    <div class="col-md-6 col-sm-12">
+      <H1 class="color-principal encabezado">NOTICIAS</H1>
+    </div>
+    <div class="col-md-6 col-sm-12 mt-3 justify-content-between ">
+      <!--Form buscador por título-->
+        <form 
+          [formGroup]="filtrarNoticiasForm"
+          (submit)="obtenerNoticiasFiltradas(1)"
+          (keydown.enter)="obtenerNoticiasFiltradas(1); $event.preventDefault();"
+        >
+         
+          <div class="w-75 d-inline-block">
+            <input
+              type="text"
+              class="form-control border-0 rounded-5 buscador"
+              placeholder="Buscar"
+              aria-label="Buscar"
+              id="filtro"
+              aria-describedby="button-addon2"
+              formControlName="filtro"
+              
+            />
+          </div>
+          @if (!esFiltro){
+          <button
+            class="btn fs-2 p-0 color-principal fw-bold col-1 d-inline-block"
+            type="submit"
+            id="button-addon2"
+          >
+            <i class="bi bi-search"></i>
+          </button>}@else {<button class="btn fs-2 p-0 color-principal fw-bold col-1 d-inline-block align-self-end" (click)="quitarFiltro()">
+            <i class="bi bi-x-circle-fill color-principal	" id="cancel"></i></button>}
+        </form>      
+
+      </div>
+    </div>
+@switch (status){
+  @case('pending'){
+    <!--Placeholders que se muestran mientras se cargan las noticias-->
+    @for (n of placeholder; track n){
+    <div class="card my-4 btn-img rounded">
+      <div class="row g-0 ">
+        <!-- Imagen -->
+        <div class="col-md-3 col-sm-12 placeholder-glow">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect></svg>
+        </div>
+    <div class="col-md-9 card-body d-flex flex-column">
+      <div>
+        <div class="card-title placeholder-glow">
+        <h5 class="color-principal"><span class="placeholder col-12"></span>
+        </h5></div>
+        <div class="card-text placeholder-glow">
+        <p class="color-secundario">
+          <span class="placeholder col-2"></span>  <span class="placeholder col-2"></span> 
+          <span class="placeholder col-4"></span>
+        </p>
+        <p class="card-text">
+          <span class="placeholder col-6"></span><span class="placeholder col-2"></span> <span class="placeholder col-10"></span>
+        </p>
+      </div></div>
+      <!-- Botón alineado abajo a la derecha -->
+      <div class="mt-auto text-end">
+        <h5 class="color-principal"><span class="placeholder col-1 text-end"></span></h5>
+      </div>
+    </div>
+  </div>
+</div>
+  }}
+  @case ('success'){
+    <!--Recorrido que muestra todas las noticias, o que no se encontraron con ese título-->
+@if(noticias.length == 0){
+  <div class="row justify-content-center text-center my-5">
+  <p class="text-muted">No se encontraron noticias con ese titulo</p></div>
+}
+  @for (n of noticias; track n.NoticiaId){
+    <a class=" text-decoration-none  border-0" (click)="ver_noticia(n.NoticiaId)">
+  <div class="card my-4 btn-img rounded">
+    <div class="row g-0 ">
+      <!-- Imagen -->
+      <div class="col-md-3 col-sm-12">
+        <img
+          class=" img-responsive img-fluid img-noticias rounded-start "
+          src="{{ img_URL }}{{ n.NoticiaImgPrincipal }}"
+          alt="agua potable" style="width:100%"
+        />
+      </div>
+      <!-- Contenido de la tarjeta -->
+      <div class="col-md-9 card-body d-flex flex-column">
+        <div>
+          <h5 class="card-title color-principal fs-3 fw-bold">
+            {{ n.NoticiaTitulo }}
+          </h5>
+          <p class="color-secundario">
+            <i class="bi bi-person-fill"></i>{{ n.NoticiaAutor }} <span class="color-principal">  |  </span><i class="bi bi-tag-fill"></i> {{ n.CategoriaNombre }} <span class="color-principal">  |  </span>
+            <i class="bi bi-calendar3 pe-2"></i>{{ n.NoticiaFechaPubl | date : "longDate" }}
+          </p>
+          <p class="card-text">
+            {{n.NoticiaResumen}}
+          </p>
+        </div>
+        <!-- Botón alineado abajo a la derecha -->
+        <div class="mt-auto d-flex justify-content-end">
+          <button
+            class="btn btn-primario blanco"
+            (click)="ver_noticia(n.NoticiaId)"
+          >
+            Leer más
+          </button>
+        </div>
+      </div>
+    </div>
+  </div></a>
+}}
+@case ('fail'){
+  <!--Se muestra mensaje de error en caso de haberlo-->
+  <div class="row justify-content-center mt-5">
+    <img class="img-fluid img-nohover" src="/images/gota_error.webp" style="width:10rem; height:auto">
+  </div>
+  <div class="row justify-content-center text-center mb-5 border-bottom">
+  <p class="text-danger text-wrap">Ha sucedido un error y no se han podido cargar las noticias</p></div>
+}
+}
+  <!--Paginacion-->
+  <div class="col-12 justify-content-center text-center">
+  @if (cantidadPaginas!=0){
+  @if (paginaActual!=1){
+  <button (click)="restarPaginacion()" class="btn border-0 color-principal"><i class="bi bi-arrow-left-square-fill"></i></button>
+  <button class="btn color-principal" (click)="verificarFiltro(1)">1</button>}
+  @if (paginaActual-2>1){
+    ...
+  }
+  @if (paginaActual-1>1 && cantidadPaginas>2){
+    <button class="btn color-principal" (click)="verificarFiltro(paginaActual-1)">{{paginaActual-1}}</button>
+  }
+  <button class="btn color-secundario" (click)="verificarFiltro(paginaActual)">{{paginaActual}}</button>
+  @if (paginaActual+1<cantidadPaginas && cantidadPaginas>2){
+    <button class="btn color-principal" (click)="verificarFiltro(paginaActual+1)">{{paginaActual+1}}</button>
+  }
+  @if (paginaActual+2<cantidadPaginas){
+    ...
+  }
+  @if(paginaActual!=cantidadPaginas){
+    <button class="btn color-principal" (click)="verificarFiltro(cantidadPaginas)">{{cantidadPaginas}}</button>
+  <button class="btn border-0 color-principal"><i class="bi bi-arrow-right-square-fill" (click)="aumentarPaginacion()"></i></button>
+  }}
+</div>
+</section>

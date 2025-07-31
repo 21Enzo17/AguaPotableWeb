@@ -1,0 +1,156 @@
+[
+  {
+    "Id": 1,
+    "Texto": "¡Bienvenido! Soy Agüito y estoy dispuesto a responder tus consultas.",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": ""
+  },
+  {
+    "Id": 2,
+    "Texto": "¿Cuales son los días y horarios de atención?",
+    "EsBot": false,
+    "RespuestaId": 3,
+    "Categoria": "Atención"
+  },
+  {
+    "Id": 3,
+    "Texto": "¡Los días y horarios que estamos disponibles son los siguientes!: <br>Oficina capital: Lunes a viernes 07:00 a 16:00 - Oficina interior: 07:00 a 14:00.",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Atención"
+  },
+  {
+    "Id": 4,
+    "Texto": "¿Cuales son mis deudas?",
+    "EsBot": false,
+    "RespuestaId": 5,
+    "Categoria": "Pagos"
+  },
+  {
+    "Id": 5,
+    "Texto": "¡Podés fijarte tus deudas en la página! Tené en cuenta que las que figuran son de los últimos 6 meses. Si hay deudas anteriores, tenés que asistir presencialmente a tu oficina de Agua Potable más cercana.",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Pagos"
+  },
+  {
+    "Id": 6,
+    "Texto": "¿Cuales son los requisitos de Cloaca, Conexión de agua o Cambio de sistema?",
+    "EsBot": false,
+    "RespuestaId": 7,
+    "Categoria": "Trámites"
+  },
+  {
+    "Id": 7,
+    "Texto": "¡Podés descargar cualquiera de los requisitos a continuación!:<br> <a href=\"/pdf/REQUISITOS_CLOACA_GENERAL.pdf\" download>Requisitos de cloaca general <i class=\"bi bi-link-45deg\"></i></a><br> <a href=\"/pdf/REQUISITOS_PARA_CONEXIÓN_DE_AGUA.pdf\" download>Requisitos conexión de agua <i class=\"bi bi-link-45deg\"></i></a><br> <a href=\"/pdf/REQUISITOS_CAMBIO_SISTEMA.pdf\" download>Requisitos cambio de sistema <i class=\"bi bi-link-45deg\"></i></a>",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Trámites"
+  },
+  {
+    "Id": 8,
+    "Texto": "¿Donde puedo descargar el formulario de conexión?",
+    "EsBot": false,
+    "RespuestaId": 9,
+    "Categoria": "Trámites"
+  },
+  {
+    "Id": 9,
+    "Texto": "¡Podés descargar el formulario de conexión haciendo click <a href=\"/pdf/FORMULARIO_DE_CONEXION.pdf\" download>acá <i class=\"bi bi-link-45deg\"></i></a>!",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Trámites"
+  },
+  {
+    "Id": 10,
+    "Texto": "¿Cómo solicito un libre de deudas?",
+    "EsBot": false,
+    "RespuestaId": 11,
+    "Categoria": "Trámites"
+  },
+  {
+    "Id": 11,
+    "Texto": "¡Este trámite se realiza presencialmente!🚰. Si es algo administrativo, es inmediato; y si es para conexión, tarda solo 48 horas. ¡Te espero en la oficina! 💧",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Trámites"
+  },
+  {
+    "Id": 12,
+    "Texto": "¿Se paga un baldío?",
+    "EsBot": false,
+    "RespuestaId": 13,
+    "Categoria": "Pagos"
+  },
+  {
+    "Id": 13,
+    "Texto": "¡Sí, es correcto! 🚰 Los baldíos pagan un canon mensual por ser frentistas en la red, según la ley 4090 y el decreto 1166/2016. 💧",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Pagos"
+  },
+  {
+    "Id": 14,
+    "Texto": "¿Qué hago si me roban el medidor?",
+    "EsBot": false,
+    "RespuestaId": 15,
+    "Categoria": "Reclamos"
+  },
+  {
+    "Id": 15,
+    "Texto": "¡Qué problema! 🚰 Lo primero es hacer una exposición policial y luego comprar un medidor nuevo. Presentá ambos en Agua Potable lo antes posible para evitar inconvenientes. 💧",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Reclamos"
+  },
+  {
+    "Id": 16,
+    "Texto": "¿Qué hago si detecto pérdidas de agua o cloacas?",
+    "EsBot": false,
+    "RespuestaId": 17,
+    "Categoria": "Problemas técnicos"
+  },
+  {
+    "Id": 17,
+    "Texto": "¡No te preocupes, ya lo solucionaremos! 🚰 Llamanos al 0800-444-26337 o al 388-4614173. Estamos disponibles todos los días, de 07:00 a 22:00. 💧",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Problemas técnicos"
+  },
+  {
+    "Id": 18,
+    "Texto": "¿Cuáles son las obligaciones del usuario?",
+    "EsBot": false,
+    "RespuestaId": 19,
+    "Categoria": "Información general"
+  },
+  {
+    "Id": 19,
+    "Texto": "¡Buena pregunta! 🚰 Las obligaciones tanto del usuario como de la empresa están detalladas en el <a href=\"https://aguapotable.jujuy.gob.ar/wp-content/uploads/sites/42/2017/08/Decreto-1166-ISPTyV-2016-Anexo.pdf\" target=\"_blank\">decreto 1166/2016 <i class=\"bi bi-link-45deg\"></i></a>. ¡Estamos para ayudarte! 💧",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Información general"
+  },
+  {
+    "Id": 20,
+    "Texto": "Mi consulta no está aquí, ¿qué hago?",
+    "EsBot": false,
+    "RespuestaId": 21,
+    "Categoria": "Soporte"
+  },
+  {
+    "Id": 21,
+    "Texto": "¡Oh, no! 🚰 No te preocupes, escribime al siguiente mail y encontraremos una solución juntos. 💧",
+    "EsBot": true,
+    "RespuestaId": 22,
+    "Categoria": "Soporte"
+  },
+  {
+    "Id": 22,
+    "Texto": "<a href=\"mailto:atencioncliente_apsj@aguapotablejujuy.com.ar\" style=\"line-break:anywhere;\">atencioncliente_apsj@aguapotablejujuy.com.ar <i class=\"bi bi-reply-fill\"></i></a>",
+    "EsBot": true,
+    "RespuestaId": "null",
+    "Categoria": "Soporte" 
+  }
+]

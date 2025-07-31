@@ -1,0 +1,120 @@
+<div class="container-fluid">
+  <div class="row">
+    <!--Seccion noticia-->
+    <section class="col-md-7 col-sm-12 my-5 ps-3">
+      <h1 class="fs-2 fw-bolder text-start pt-3 color-principal">
+        {{ noticiaRecuperada.NoticiaTitulo }}
+      </h1>
+      <p class="fw-bold fs-6 border-bottom">
+        Autor:
+        <span class="color-secundario">{{
+          noticiaRecuperada.NoticiaAutor
+        }}</span>
+        |
+        <span class="color-secundario">{{
+          noticiaRecuperada.NoticiaFechaPubl | date : "longDate"
+        }}</span>
+      </p>
+<button class="btn border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img
+        class="img-thumbnail border-0 images"
+        src="{{ img_URL }}{{ noticiaRecuperada.NoticiaImgPrincipal }}"
+        alt="agua potable"
+      /></button>
+      <div [innerHTML]="noticiaRecuperada.NoticiaContenido | safeHtml" class="mt-5 img-responsive img-fluid">
+      </div>
+      <div class="border-top fs-6 text-muted fw-bold">
+        <p>
+          Categoria:
+          <span class="color-secundario">{{
+            noticiaRecuperada.CategoriaNombre
+          }}</span>
+        </p>
+        <p>
+          Fecha:
+          <span class="color-secundario">{{
+            noticiaRecuperada.NoticiaFechaPubl | date : "longDate"
+          }}</span>
+        </p>
+        <p>
+          Autor:
+          <span class="color-secundario">{{
+            noticiaRecuperada.NoticiaAutor
+          }}</span>
+        </p>
+      </div>
+    </section>
+    <!--Aside noticias destacadas-->
+    <aside class="pt-3 col-md-5 col-sm-12 align-self-top border-start mt-5">
+      <h2 class="text-muted">Noticias Destacadas</h2>
+      @for (n of noticiasDestacadas; track n.NoticiaId){
+      <div class="card mb-3 btn-img" style="max-width: 540px" (click)="ver_noticia(n.NoticiaId)">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="{{ img_URL }}{{ n.NoticiaImgPrincipal }}"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title fs-8 fw-bold">
+                {{ n.NoticiaTitulo }}
+              </h5>
+              <p class="card-text">
+                <small class="fw-bold fs-8 color-secundario">{{
+                  n.NoticiaFechaPubl | date : "longDate"
+                }}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </aside>
+    <!--Seccion entradas recientes-->
+    <section
+      class="col-12 d-md-flex d-none flex-wrap text-center pt-5 border-top justify-content-center"
+    >
+      <h3 class="fw-bold color-principal col-12">Entradas recientes</h3>
+      @for (n of noticias; track n.NoticiaId){
+      <div class="card col-3 mb-4 mx-2">
+        <img
+          src="{{ img_URL }}{{ n.NoticiaImgPrincipal }}"
+          class="card-img-top img-entradas-recientes btn-img rounded"
+          alt="..." (click)="ver_noticia(n.NoticiaId)"
+        />
+        <div class="card-body">
+          <h5 class="card-title m-0 text-start fw-bold color-principal">
+            {{ n.NoticiaTitulo }}
+          </h5>
+        </div>
+        <p class="card-text mb-2 text-start ps-2">
+          <small class="fw-normal fs-8 color-secundario">{{
+            n.NoticiaFechaPubl | date : "longDate"
+          }}</small>
+        </p>
+        <div class="mt-auto d-flex justify-content-end pe-3 pb-3">
+          <button class="btn btn-primario blanco" (click)="ver_noticia(n.NoticiaId)">Leer más</button>
+        </div>
+      </div>
+      }
+    </section>
+  </div>
+
+</div>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade border-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg border-0">
+    <div class="modal-content border-0 modal-window-translucent ">
+      <div class="modal-body justify-content-end text-end">
+        <button type="button" class="text-light btn justify-content-end m-0 p-0 text-end" data-bs-dismiss="modal" aria-label="Close"><i class=" fs-3 bi bi-x-lg"></i></button>
+       <img class="img-fluid"src="{{ img_URL }}{{ noticiaRecuperada.NoticiaImgPrincipal }}">
+      </div>
+    </div>
+  </div>
+</div>

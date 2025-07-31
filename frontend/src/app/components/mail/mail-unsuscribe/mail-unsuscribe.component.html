@@ -1,0 +1,19 @@
+<div class="container  px-0 my-5 text-center align-items-center justify-content-center" style="min-height:60vh;">
+    @switch(this.status){
+    @case ('pending'){
+    <div class="load_watertap align-self-center">
+        <div class="gota"></div>
+    </div>}
+    @case('success'){
+        @if (res.status==1){
+            <img src="images/gota_baja.webp" class="img-fluid img-nohover" style="width: 15rem; height: auto">
+            <p class="fs-1 fw-bold text-center text-danger mb-5 pb-5">{{res.data}}</p>
+        }
+        @if(res.status>1){
+            <img src="images/gota_error.webp" class="img-fluid img-nohover" style="width: 15rem; height: auto">
+            <p class="fs-1 fw-bold text-center text-danger mb-5 pb-5">{{res.data}}</p>
+        }
+    
+}
+}
+</div>

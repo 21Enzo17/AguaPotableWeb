@@ -1,0 +1,12 @@
+.active a{
+    color: #68ccac;
+}
+
+@media (min-width: 576px) { 
+}
+
+@media (min-width: 992px) { 
+    .border-lg-0{
+        border: 0px !important;
+    }
+}

@@ -1,0 +1,275 @@
+
+<!--Sección de Video-->
+<section class="justify-content-center my-5">
+  <!--Video cargado a través de assets en angular.json-->
+  <video
+    class="ratio ratio-4x3"
+    width="300em"
+    height="350em"
+    autoplay
+    loop
+    muted
+    oncanplay="this.play()"
+    onloadedmetadata="this.muted = true"
+  >
+    <source src="ap_video.mp4" class="" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+<!--Sección de botones-->
+<section
+  class="col-12 py-5 fw-bold fs-1 mt-5 text-center blanco bg-1 text-wrap"
+>
+  <!--Botones-->
+  <div class="col-md-10 col-lg-5 col-sm-12 mx-2 d-sm-flex d-md-inline-block">
+    <a
+      class="button-19 text-decoration-none py-5"
+      href="http://app.aguapotablejujuy.com:1089/autogestion.webinicioautogestion.aspx"
+      ><p class="text-wrap">CONSULTÁ, DESCARGÁ Y PAGÁ</p>
+      <p class="fs-6 fw-light text-light">CONOCÉ TUS FACTURAS</p>
+      <img
+        class="img-fluid img-home d-none d-md-inline-block"
+        src="images/payment.webp"
+    /></a>
+  </div>
+  <div class="col-md-10 col-lg-5 col-sm-12 mx-2 d-sm-flex d-md-inline-block">
+    <a
+      class="button-19 text-decoration-none py-5"
+      href="https://5dy7b98h.forms.app/formulario-de-contacto" target="_blank"
+      ><p class="text-wrap">ADHERIRTE A DÉBITO AUTOMÁTICO</p>
+      <p class="fs-6 fw-light text-light">ㅤ</p>
+      <img
+        class="img-fluid img-home d-none d-md-inline-block"
+        src="images/debito.webp"
+    /></a>
+  </div>
+
+  <div class="col-md-10 col-lg-5 col-sm-12 mx-2 d-sm-flex d-md-inline-block">
+    <a class="button-19 text-decoration-none py-5" [routerLink]="['/tramites']"
+      ><p>TRÁMITES VARIOS</p>
+      <img
+        class="img-fluid img-home d-none d-md-inline-block"
+        src="images/cellphone.webp"
+      />
+    </a>
+  </div>
+  <div class="col-md-10 col-lg-5 col-sm-12 mx-2 d-sm-flex d-md-inline-block">
+    <a
+      class="button-19 text-decoration-none py-5 px-0"
+      [routerLink]="['/preguntas-frecuentes']"
+      ><p class="text-wrap">PREGUNTAS FRECUENTES</p>
+      <img
+        class="img-fluid img-home d-none d-md-inline-block"
+        src="images/pf.webp"
+    /></a>
+  </div>
+
+  <!--Imágenes de medios de pago-->
+  <div class="col-12 d-flex bg-2 rounded flex-wrap justify-content-center my-5">
+    <img class="img-logo px-2" src="images/logo-macro.webp" />
+    <img class="img-logo px-2" src="images/logo-ejesa.webp" />
+    <img class="img-logo px-2" src="images/logo-pagofacil.webp" />
+    <img class="img-logo px-2" src="images/logo-banelco.png" />
+    <img class="img-logo px-2" src="images/logo-redlink.webp" />
+    <img class="img-logo px-2" src="images/logo-pmc.webp" />
+    <img class="img-logo px-2" src="images/logo-bse.webp" />
+    <img class="img-logo px-2" src="images/logo-bancocredicoop.webp" />
+    <img class="img-logo px-2" src="images/logo-rapipago.webp" />
+  </div>
+  <div class="mb-5"></div>
+</section>
+<!--Sección de Noticias Destacadas-->
+
+  <section class="justify-content-center d-block">
+  <h2 class="fs-1 color-principal text-center col-12 fw-bolder my-5 pt-5">
+    Noticias Destacadas
+  </h2>
+@switch (status){
+@case ('loading'){
+  <div class="justify-content-center d-flex my-5 pt-5" style="padding-bottom: 10rem;">
+  <mat-spinner></mat-spinner>
+  </div>
+  }
+@case('success'){
+  @for (n of noticias; track n.NoticiaId){
+  <!--Tarjeta placeholder-->
+  <div class="card m-3 col-md-5 col-sm-10 shadow-lg g-col-6 border-0">
+    <a
+      class="btn-img d-flex justify-content-center"
+      (click)="ver_noticia(n.NoticiaId)"
+      ><img
+        class="img-noticias-destacadas img-fluid mt-3"
+        src="{{ img_URL }}{{ n.NoticiaImgPrincipal }}"
+        alt="agua potable"
+    /></a>
+    <div class="card-body">
+      <p class="card-text">
+        <small class="fc-categoria"
+          >{{ n.CategoriaNombre }} |
+          {{ n.NoticiaFechaPubl | date : "longDate" }}</small
+        >
+      </p>
+      <h5 class="fc-titulo">
+        {{ n.NoticiaTitulo }}
+      </h5>
+      <button
+        class="btn btn-primario blanco"
+        (click)="ver_noticia(n.NoticiaId)"
+      >
+        Leer más
+      </button>
+    </div>
+  </div>
+  }
+}
+@case('error'){
+  <div class="row justify-content-center mt-5">
+    <img class="img-fluid img-nohover" src="/images/gota_error.webp" style="width:10rem; height:auto">
+  </div>
+  <div class="row justify-content-center text-center mb-5 border-bottom">
+  <p class="text-danger text-wrap">Ha sucedido un error y no se han podido cargar las noticias destacadas</p></div>
+}
+  }
+  </section>
+<section class="d-flex bg-2 justify-content-center flex-wrap">
+  <div class="col-11 mt-5 mb-3">
+    <h2
+    class="fs-1 color-principal text-center d-block col-12 fw-bolder mb-5"
+  >
+    Sobre Nosotros
+  </h2>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button accordion-style"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Institucional
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body text-muted">
+            <p>
+              Somos una empresa estatal <strong>comprometida</strong> con
+              nuestra comunidad,
+              <strong>trabajando las 24 horas, los 365 días del año</strong>,
+              para brindar un <i>servicio esencial para la vida humana:</i> el
+              acceso universal al agua potable. Nos caracterizamos por nuestra
+              responsabilidad, dedicación y espíritu de servicio, contribuyendo
+              al desarrollo humano de los jujeños.
+            </p>
+            <p>
+              Nuestro objetivo principal es que todos los jujeños accedan al
+              servicio de agua potable y saneamiento, promoviendo el uso
+              racional del agua, el equilibrio social y ambiental, y la mejora
+              constante de nuestros sistemas. Buscamos optimizar los niveles de
+              prestación y eficiencia en la producción de agua potable y en el
+              manejo del saneamiento.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed accordion-style"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Misión, Visión, Valor
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body text-muted">
+            <p>
+              <strong
+                class="fs-4 color-principal"
+                style="text-transform: uppercase"
+                >Misión:</strong
+              >
+            </p>
+            <p>
+              Asegurar el acceso al servicio de agua potable y saneamiento para
+              todas las familias jujeñas, incorporando tecnologías y optimizando
+              los procesos operativos e infraestructurales. Nos guiamos por la
+              convicción de efectuar mejoras continuas que eleven los estándares
+              de calidad de vida de miles de jujeños.
+            </p>
+            <p>
+              <strong
+                class="fs-4 color-principal"
+                style="text-transform: uppercase"
+                >Visión:</strong
+              >
+            </p>
+            <p>
+              Constituirnos en una empresa estatal modelo y referente en la
+              región; eficiente, autosustentable e innovadora, garantizando el
+              equilibrio ambiental y social. Planificamos y aseguramos la
+              universalidad del acceso al servicio de agua potable y saneamiento
+              para todos los jujeños.
+            </p>
+            <strong
+              class="fs-4 color-principal"
+              style="text-transform: uppercase"
+              >Valores:</strong
+            ><br />
+            <ul class="mt-3">
+              <li>Transparencia</li>
+              <li>Solidaridad</li>
+              <li>Universalidad</li>
+              <li>Sustentabilidad</li>
+              <li>Integración</li>
+              <li>Equidad</li>
+              <li>Eficiencia</li>
+              <li>Calidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed accordion-style"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Autoridades
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body text-muted">
+            <p><strong class="color-principal">Presidente:</strong> Ingeniero Juan Carlos García</p>
+            <p><strong class="color-principal">Vocal Contable:</strong> C.P.N. Adolfo Ramírez</p>
+            <p><strong class="color-principal">Vocal Técnico:</strong> Ingeniero Marcelo Jorge</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<app-chat></app-chat>

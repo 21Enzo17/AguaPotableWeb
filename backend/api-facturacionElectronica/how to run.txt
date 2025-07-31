@@ -1,0 +1,3 @@
+Comando para correr app con archivo .env
+
+node --env-file=.env app.js

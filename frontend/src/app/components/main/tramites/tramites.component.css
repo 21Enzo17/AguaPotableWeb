@@ -1,0 +1,44 @@
+.btn-tramite{
+    background-color: #083c8c;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+.btn-tramite:hover{
+    background-color: #083c8c;
+    color: #fffcfc;
+    transform: scale(1.1);
+}
+
+.bg-pdf{
+    background-color: #fffcfc;
+    border-radius: 5rem;
+    height: 3rem;
+}
+
+.bg-pdf2{
+    background-color: #083c8c;
+    border-radius: 5rem;
+    height: 3rem;
+}
+
+.secret {
+    display: none;
+    opacity: 1;
+  }
+  
+  .secret-button:hover ~ .secret {
+    display: inline-block;
+    opacity: 1;
+    right: clamp(2.8rem,2vw, 10rem);
+    z-index:1;
+  }
+  
+  .secret-button:hover  {
+    transform: translateX(-100%);
+  }
+  
+  .secret-button {
+    z-index: 2;
+    transition: transform 0.5s, opacity 0.5s;
+  }

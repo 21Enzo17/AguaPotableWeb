@@ -1,0 +1,14 @@
+./frontend/node_modules/*
+
+./backend/api-facturas-pdf/node_modules/*
+./backend/api-facturacionElectronica/node_modules/*
+
+./backend/ChatBot-AguaPotable/base-js-meta-memory/dist/*
+./backend/ChatBot-AguaPotable/base-js-meta-memory/node_modules/*
+
+./backend/ChatBot-AguaPotable/base-js-meta-memory/*_sessions
+./backend/ChatBot-AguaPotable/base-js-meta-memory/*tokens
+./backend/ChatBot-AguaPotable/base-js-meta-memory/wwebjs*
+
+./backend/ChatBot-AguaPotable/base-js-meta-memory/*.log
+./backend/ChatBot-AguaPotable/base-js-meta-memory/*qr.png

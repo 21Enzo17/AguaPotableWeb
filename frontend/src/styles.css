@@ -1,0 +1,349 @@
+
+body{
+    font-family: "Poppins", serif !important;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+
+.fs-8{
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+.fs-9{
+    font-size: 0.5em;
+    font-weight: 200;
+}
+
+
+.color-principal{
+    color: #083c8c;
+
+    a{
+        color: #083c8c;
+    }
+}
+
+
+.color-secundario{
+    color: #68ccac;
+}
+
+.blanco{
+    color: #fffCFC;
+}
+
+.bg-1{
+    background-color: #083c8c;
+}
+
+.bg-2{
+    background-color: #fffcfc !important;
+}
+.bg-3{
+    background-color:#68ccac;
+}
+
+.encabezado{
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+
+.btn-primario{
+    background-color: #083c8c;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+.btn-primario:hover{
+    background-color: #083c8c;
+    color: #68ccac;
+    transform: scale(1.1);
+}
+
+.btn-home{
+    background-color: #fffcfc;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+.btn-home:hover{
+    background-color: #fffcfc;
+    color: #083c8c;
+    transform: scale(1.1);
+}
+
+.btn-img{
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+.btn-img:hover{
+    transform: scale(1.1);
+}
+
+
+
+.btn-pag{
+    width: 1em;
+    height: auto;
+}
+
+.fc-categoria{
+    color:#68ccac;
+    font-weight: 700;
+    font-size: 0.7em;
+}
+
+.fc-titulo{
+    color:#083c8c;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.img-logo{
+    width: 2.5em;
+    height: 2.5em;
+    object-fit: contain;
+}
+
+.img-noticias-destacadas{
+    width:30em;
+    height:18em;
+    object-fit: cover;
+    align-self: center;
+    border-radius: 1em;
+}
+
+.img-entradas-recientes{
+    width:15em;
+    height:15em;
+    object-fit: contain;
+    align-self: center;
+}
+.img-responsive img {
+    max-width: 100%;
+    max-height: 30rem;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+  }
+
+.img-entradas-recientes {
+    float: left;
+    width:  20em;
+    height: 15em;
+    object-fit: cover;
+}
+
+.img-noticias{
+    height: 15em;
+    width: 20em;
+    object-fit: cover;
+}
+
+.img-home{
+    height: 16rem;
+    width: auto;
+    object-fit: cover;
+}
+
+.img-preguntas-frecuentes{
+    width: 50em;
+}
+
+.shadow-inner{
+    box-shadow: 1px 0px 35px -16px rgba(0,0,0,0.43) inset;
+-webkit-box-shadow: 1px 0px 35px -16px rgba(0,0,0,0.43) inset;
+-moz-box-shadow: 1px 0px 35px -16px rgba(0,0,0,0.43) inset;
+}
+
+.buscador{
+    background: #fffcfc;
+    border-radius: 20%;
+    box-shadow: inset 5.11px 5.11px 12px #C7C5C5, inset -5.11px -5.11px 12px #FFFFFF;
+}
+
+/* CSS */
+.button-19 {
+  appearance: button;
+  border: solid transparent;
+  border-radius: 5%;
+  border-width: 0 0 10px;
+  box-sizing: border-box;
+  box-shadow: inset 9.91px 9.91px 15px #073276, inset -9.91px -9.91px 15px #0947A8;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: .8px;
+  padding: 0.3em;
+  margin-top: 0.5em;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-image: linear-gradient(145deg, #07347B, #0944A3);
+  box-shadow: inset 9.91px 9.91px 15px #073276, inset -9.91px -9.91px 15px #0947A8;
+  border: solid transparent;
+  border-radius: 5%;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+.button-19:active {
+  border-width: 4px 0 0;
+  background: none;
+}
+
+.chat-bubble-bot a{
+    color:#68ccac !important;
+    text-decoration: none !important;
+  }
+
+  .chat-bubble-bot a:hover{
+    opacity: 50%;
+  }
+/* Style the Image Used to Trigger the Modal */
+img {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+img:hover {opacity: 0.7;}
+
+
+.img-nohover:hover{
+    opacity:100%;
+  }
+/* The Modal (background) */
+#image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.modal-content { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+#image-viewer .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+#image-viewer .close:hover,
+#image-viewer .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fade-in-animation { animation: fadeIn 1s; }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.custom-scrollbar-css {
+    height: 200px;
+  }
+  
+  
+  /* Custom Scrollbar using CSS */
+  .custom-scrollbar-css {
+    overflow-y: scroll;
+  }
+  
+  /* scrollbar width */
+  .custom-scrollbar-css::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* scrollbar track */
+  .custom-scrollbar-css::-webkit-scrollbar-track {
+    background: #fffcfc;
+  }
+  
+  /* scrollbar handle */
+  .custom-scrollbar-css::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: #00d2ff;
+    background-image: #0C4CB3;
+  }
+
+
+.loader {
+    width: 30px;
+    aspect-ratio: 4;
+    --_g: no-repeat radial-gradient(circle closest-side,#fffcfc 90%,#0000);
+    background: 
+      var(--_g) 0%   50%,
+      var(--_g) 50%  50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100%/4) 100%;
+    animation: l7 1s infinite linear;
+  }
+  @keyframes l7 {
+    33%{background-size:calc(100%/4) 0%  ,calc(100%/4) 100%,calc(100%/4) 100%}
+    50%{background-size:calc(100%/4) 100%,calc(100%/4) 0%  ,calc(100%/4) 100%}
+    66%{background-size:calc(100%/4) 100%,calc(100%/4) 100%,calc(100%/4) 0%  }
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

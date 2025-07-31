@@ -1,0 +1,7 @@
+.custom-img {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 400px; /* Ajusta el ancho máximo */
+    max-height: 300px; /* Ajusta la altura máxima */
+    object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
+}

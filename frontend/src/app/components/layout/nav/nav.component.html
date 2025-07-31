@@ -1,0 +1,74 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg shadow border-top w-100" style="background-color: #fffcfc">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <!--Icono-->
+      <img class="img-fluid ps-3" style="width: auto; max-height: 4em; object-fit: contain" src="images/ap-logo.webp"
+        alt="Agua Potable" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse pe-3 fw-bold justify-content-between"
+      style="letter-spacing: 2.5px; font-size: 1rem" id="navbarNavDropdown">
+      <!--Botones nav-->
+      <ul class="navbar-nav color-principal link-opacity-50-hover pt-3 border-top pt-lg-0 pb-3 pb-lg-0 border-bottom border-lg-0">
+        <li class="nav-item px-3" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+            [routerLink]="['/home']">INICIO</a>
+        </li>
+
+        <li class="nav-item px-3" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+            [routerLink]="['/noticias']">NOTICIAS</a>
+        </li>
+        <li class="nav-item dropdown px-3">
+          <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            CLIENTE
+          </a>
+          <ul class="dropdown-menu dropdown-center">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              <a class="dropdown-item fw-bold bg-2" [routerLink]="['/tramites']">TRÁMITES</a>
+            </li>
+            <li routerLinkActive="active " [routerLinkActiveOptions]="{ exact: true }">
+              <a class="dropdown-item fw-bold bg-2" [routerLink]="['/contacto']">CONTACTO</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown px-3">
+          <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            INTERNO
+          </a>
+          <ul class="dropdown-menu dropdown-center me-5">
+            <li>
+              <a class="dropdown-item fw-bold" href="https://apps.aguapotablejujuy.com/recibosweb/"
+                target="_blank">INTRANET</a>
+            </li>
+            <li>
+              <a class="dropdown-item fw-bold" href="https://apps.aguapotablejujuy.com/externos/loginprovedores.aspx"
+                target="_blank">PROVEEDORES</a>
+            </li>
+            <li>
+              <a class="dropdown-item fw-bold" href="http://app.aguapotablejujuy.com:82/weblicitaciones.aspx"
+                target="_blank">LICITACIONES</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav color-principal link-opacity-50-hover fs-3 d-inline-block pt-4 pt-lg-0 d-lg-flex">
+        <li class="d-inline-block d-lg-flex"><a class="ps-lg-4 ps-3 link-opacity-50-hover" href="https://api.whatsapp.com/send?phone=5493884614173"
+            target="_blank" title="Whatsapp"><i class="bi bi-whatsapp"></i></a></li>
+        <li class="d-inline-block d-lg-flex"><a class="ps-lg-4 ps-3 link-opacity-50-hover" href="https://www.facebook.com/aguapotabledejujuy/" target="_blank"
+            title="Facebook"><i class="bi bi-facebook"></i></a></li>
+        <li class="d-inline-block d-lg-flex"><a class="ps-lg-4 ps-3 link-opacity-50-hover" href="https://www.instagram.com/aguapotablejujuy/" target="_blank"
+            title="Instagram"><i class="bi bi-instagram"></i></a></li>
+        <li class="d-block d-lg-flex pt-2 pt-lg-0"><a class="ps-lg-5 ps-3 link-opacity-50 text-decoration-none align-items-center d-flex" href="tel:0800-444-263337" target="_blank"><i
+              class="bi bi-telephone-fill"></i><small class="fs-6 ps-2  d-lg-flex">0800-444-263337</small></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

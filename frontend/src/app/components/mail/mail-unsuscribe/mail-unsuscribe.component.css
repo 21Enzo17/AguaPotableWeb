@@ -1,0 +1,36 @@
+.load_watertap {
+    position: relative;
+    width: 6rem; /* ajusta el ancho según tus necesidades */
+    height: 6rem; /* ajusta el alto según tus necesidades */
+    background-image: url('/images/load_canilla.webp');
+    background-size: cover;
+    z-index: 10;
+    left:42%;
+    top:20vh !important;
+  }
+  
+  .load_watertap .gota {
+    position: absolute;
+    left: 2.9rem;
+    transform: translateX(-50%);
+    width: 5rem; /* ajusta el ancho según tus necesidades */
+    height:5rem; /* ajusta el alto según tus necesidades */
+    background-image: url('/images/load_gota.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: caer 2s infinite;
+    overflow:visible;
+    z-index: 1;
+  }
+  
+  @keyframes caer {
+    0% {
+      top: 1rem;
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }

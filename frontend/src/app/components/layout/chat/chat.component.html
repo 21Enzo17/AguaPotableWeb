@@ -1,0 +1,193 @@
+<div class="fixed-right text-end col-1" id="bubble-opener">
+  <button
+    class="btn btn-bubble-opener mb-5"
+    (click)="abrirElemento('bubble')"
+    (click)="cerrarElemento('bubble-opener')"
+  >
+    <i class="bi bi-chat-right-fill blanco"></i>
+  </button>
+</div>
+<div
+  class="fixed-right text-end mb-3 col-sm-1 col-md-1 col-lg-3 me-3"
+  style="z-index: 0"
+  id="bubble"
+  cdkDrag
+>
+  <div class="row pe-3">
+    <div
+      class="col chat-bubble-start px-3 pt-2 position-absolute  fade-out"
+      style="right: 6rem; bottom: 6rem" id="start-dialog"
+    >
+      <p class="text-start fw-bold">¡Estoy aqui para ayudarte!</p>
+    </div>
+    <button
+      class="btn text-body-tertiary col d-inline text-end m-0 p-0 border-0 position-absolute"
+      (click)="cerrarElemento('bubble')"
+      (click)="cerrarElemento('start-dialog')"
+      (click)="abrirElemento('bubble-opener')"
+      style="bottom: clamp(6rem, 7vh, 10rem);right:0.2rem;"
+    >
+      <i class="bi bi-x-circle-fill fs-3 align-self-bottom"></i>
+    </button>
+  </div>
+  <button
+    (click)="abrirElemento('chat')"
+    (click)="cerrarElemento('bubble')"
+    (click)="cerrarElemento('start-dialog')"
+    class="btn btn-success nohover shadow btn-chat rounded-pill fs-1 px-3"
+    style="background-color: #25d366"
+  >
+    <img
+      class="img-fluid img-nohover"
+      src="images/gota_mascota.webp"
+      style="width: 5rem"
+    />
+  </button>
+</div>
+<div class="col-md-6" id="chat" style="z-index: 1000">
+  <!--Botones de chat lg-->
+  <div
+    class="col-lg-3 me-5 p-0 container bg-2 fixed-right d-none d-lg-inline-block rounded-top spacing-chat-buttons"
+  >
+    <div class="bg-1 m-0 d-block row rounded-top">
+      <h2 class="text-center fw-bolder fs-5 text-light py-3">
+        Preguntas Frecuentes
+      </h2>
+    </div>
+    <div
+      class="container-btn col-lg-8 row w-100 overflow-y-scroll overflow-x-hidden custom-scrollbar-css mt-2 mx-0 p-0"
+    >
+      @for(m of mensajes; track m.Id){ @if (!m.EsBot){ @if(deshabilitarBotones){
+      <div class="row border rounded-0 w-100 justify-content-center m-0 p-0">
+        <button
+          class="btn btn-light rounded-0"
+          (click)="enviarMensaje(m.Id)"
+          disabled
+        >
+          {{ m.Texto }}
+        </button>
+      </div>
+      } @else {
+      <div class="row border rounded-0 w-100 justify-content-center p-0 m-0">
+        <button class="btn btn-light rounded-0" (click)="enviarMensaje(m.Id)">
+          {{ m.Texto }}
+        </button>
+      </div>
+      } }}
+    </div>
+  </div>
+
+  <!--Botones chat sm y md-->
+  <div
+    class="col-sm-10 bg-2 fixed-right d-lg-none d-sm-block rounded-top"
+    style="bottom: clamp(27.5rem, 20vw, 50rem)"
+  >
+    <div class="row bg-1 m-0 rounded-top w-100">
+      <h2 class="text-center fw-bolder fs-5 text-light pt-3">
+        Preguntas Frecuentes
+      </h2>
+    </div>
+    <div
+      class="row overflow-y-scroll overflow-x-hidden custom-scrollbar-css mt-2 mx-0 p-0"
+      style="max-height: 8rem"
+    >
+      @for(m of mensajes; track m.Id){ @if (!m.EsBot){ @if(deshabilitarBotones){
+      <div
+        class="row rounded-0 w-100 justify-content-center m-0 p-0"
+        style="object-fit: contain"
+      >
+        <button
+          class="btn btn-light rounded-0 border"
+          (click)="enviarMensaje(m.Id)"
+          disabled
+        >
+          {{ m.Texto }}
+        </button>
+      </div>
+      } @else {
+      <div class="row rounded-0 w-100 justify-content-center p-0 m-0">
+        <button
+          class="btn btn-light rounded-0 border"
+          (click)="enviarMensaje(m.Id)"
+        >
+          {{ m.Texto }}
+        </button>
+      </div>
+      } }}
+    </div>
+  </div>
+  <div
+    class="bg-2 rounded fixed-right shadow-lg border col-lg-3 col-md-10 mb-5-md mb-0-lg col-sm-12 border-dark-subtle mb-2"
+    id="chat"
+  >
+    <!--Imagen y boton de cancelar-->
+    <div class="flex-row m-0 text-top d-flex justify-content-between">
+      <div class="col-md-6">
+        <img
+          class="img-fluid img-nohover py-2 ps-4"
+          src="images/ap-logo.webp"
+          style="width: auto; height: 4em"
+        />
+      </div>
+      <div class="col-md-6 text-end">
+        <button
+          class="btn text-center fs-4 color-principal border-0"
+          (click)="cerrarElemento('chat')"
+          (click)="abrirElemento('bubble')"
+        >
+          <i class="bi bi-x-circle"></i>
+        </button>
+      </div>
+    </div>
+    <!--Mascota de chat-->
+    <div class="row justify-content-center bg-1 border rounded-top m-0">
+      <img
+        class="img-fluid"
+        src="images/gota_mascota.webp"
+        style="height: 8rem; width: auto"
+        id="gota1"
+        (click)="cerrarElemento('gota1')"
+        (click)="abrirElemento('gota2')"
+      />
+      <img
+        class="img-fluid"
+        src="images/gota_mascota2.webp"
+        style="height: 8rem; width: auto"
+        id="gota2"
+        (click)="cerrarElemento('gota2')"
+        (click)="abrirElemento('gota1')"
+      />
+    </div>
+    <!--Chat-->
+    <div
+      class="row pt-3 bg-2 rounded-bottom m-0 overflow-y-auto overflow-x-hidden custom-scrollbar-css"
+      style="height: clamp(15rem, 20vw, 30rem)"
+      id="chat-dialog"
+    >
+      @for(m of mensajesEnviados; track m.Id){ @if(m.EsBot){
+
+      <div class="row m-0 fade-in-animation">
+        <p
+          class="text-start pt-2 chat-bubble-bot"
+          [innerHTML]="m.Texto | safeHtml"
+        ></p>
+      </div>
+      @if (mensajesEnviados.length <= 1){
+      <div class="row d-block h-75"></div>
+      } } @else {
+      <div class="row m-0 fade-in-animation">
+        <p class="text-end pt-2 chat-bubble-user">{{ m.Texto }}</p>
+      </div>
+      @if (mensajesEnviados.length == 2){
+      <div class="row d-block h-50"></div>
+      } } } @if(deshabilitarBotones){
+      <div class="row">
+        <div class="m-0 mb-3 ms-3 chat-bubble-bot-loading fade-in-loading">
+          <div class="loader pt-3 text-start"></div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
