@@ -63,7 +63,9 @@ export class NoticiasComponent {
          
         });
         this.status="success";
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       },
       error: (error) => {
         this.status="fail";
@@ -128,7 +130,9 @@ export class NoticiasComponent {
  * @param id - El ID de la noticia a mostrarse.
  */
   ver_noticia(id: Number) {
-    window.scrollTo({ top: 0 });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0 });
+    }
     this.router.navigate(['ver-noticia', id]);
   }
 

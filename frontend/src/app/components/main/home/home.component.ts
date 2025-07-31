@@ -48,12 +48,16 @@ export class HomeComponent{
 
     ver_noticia(id : Number){
       this.router.navigate(['ver-noticia',id])
-      window.scrollTo({ top: 0 });
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0 });
+      }
     }
 
     irPreguntasFrecuentes(){
       this.router.navigate(['preguntas-frecuentes'])
-      window.scrollTo({ top: 0 });
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0 });
+      }
     }
 
 

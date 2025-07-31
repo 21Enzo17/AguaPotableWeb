@@ -26,11 +26,15 @@ export class ChatComponent {
   }
 
   cerrarElemento(elemento : string) {
-    document.getElementById(elemento)!.style.display = 'none';
+    if (typeof document !== 'undefined') {
+      document.getElementById(elemento)!.style.display = 'none';
+    }
   }
 
   abrirElemento(elemento : string) {
-    document.getElementById(elemento)!.style.display = 'block';
+    if (typeof document !== 'undefined') {
+      document.getElementById(elemento)!.style.display = 'block';
+    }
   }
 
   
@@ -68,15 +72,16 @@ export class ChatComponent {
   }
 
   scrollToBottom() {
-    const chatDialog = document.getElementById('chat-dialog');
-    if (chatDialog != null) {
-      setTimeout(() => {
-        chatDialog.scrollTop = chatDialog.scrollHeight;
-        chatDialog.scrollTo({
+    if (typeof document !== 'undefined') {
+      const chatDialog = document.getElementById('chat-dialog');
+      if (chatDialog != null) {
+        setTimeout(() => {
+          chatDialog.scrollTop = chatDialog.scrollHeight;
+          chatDialog.scrollTo({
           top: chatDialog.scrollHeight,
           behavior: 'smooth',
         });
       }, 100);
     }
   }
-}
+

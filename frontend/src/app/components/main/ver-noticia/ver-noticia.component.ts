@@ -103,7 +103,9 @@ export class VerNoticiaComponent {
   }
   ver_noticia(id: number) {
     this.router.navigate(['ver-noticia', id]);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     this.obtenerNoticia(id);
   }
 }
