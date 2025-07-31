@@ -82,6 +82,7 @@ export class ChatComponent {
           behavior: 'smooth',
         });
       }, 100);
+      }
     }
   }
-
+}
